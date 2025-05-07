@@ -164,7 +164,6 @@ log/*
 
 # docker
 docker/
-docs/
 # data
 /data/offline_dataset/*
 
