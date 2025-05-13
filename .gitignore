@@ -171,3 +171,6 @@ docker/
 /data/map_data/anno/*.png
 
 /ablation/*
+
+**.so
+**.pth
