@@ -10,7 +10,7 @@ imageio==2.31.3
 imageio_ffmpeg==0.5.1
 joblib==1.4.2
 lightning==2.2.5
-langchain==0.0.313
+# langchain==0.0.313
 matplotlib==3.7.5
 natten==0.14.6+torch200cu117
 -f https://shi-labs.com/natten/wheels

@@ -61,6 +61,6 @@ RUN git clone https://github.com/superboySB/RIFT && cd RIFT && \
 # ENV http_proxy=
 # ENV https_proxy=
 # ENV no_proxy=
-RUN rm -rf /var/lib/apt/lists/* && apt-get clean
+# RUN rm -rf /var/lib/apt/lists/* && apt-get clean
 
 CMD ["/bin/bash"]
