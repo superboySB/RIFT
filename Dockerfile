@@ -54,7 +54,7 @@ RUN echo 'export CARLA_ROOT=/home/carla' >> ~/.bashrc && \
 # 工作目录
 WORKDIR /workspace
 RUN git clone https://github.com/superboySB/RIFT && cd RIFT && \
-    python3 -m pip install -r requirements.txt && \
+    python3 -m pip install --retries=10 --timeout=120 --no-cache-dir -r requirements.txt && \
     python3 setup.py install
 
 # 如需清理代理，取消注释
