@@ -43,5 +43,6 @@ tqdm==4.66.5
 transformers==4.40.0
 urllib3==1.26.11
 wandb==0.19.1
+tabulate
 
 --extra-index-url https://download.pytorch.org/whl/cu117

@@ -1,4 +1,5 @@
-笔记
+# 笔记
+## 配置
 ```sh
 docker build -t dzp_carla:test --network=host --progress=plain .
 
@@ -7,10 +8,23 @@ xhost +
 docker run -itd --privileged --gpus all --net=host \
   -e DISPLAY=$DISPLAY \
   -e SDL_AUDIODRIVER=dummy \
-  dzp_carla:test  dzp-carla-test \
+  --name dzp-carla-test \
+  dzp_carla:test \
   /bin/bash
 
 docker exec -it dzp-carla-test /bin/bash
 
-bash ./CarlaUE4.sh
+cd ~ && bash ./CarlaUE4.sh
 ```
+测试carla功能正常即可，然后下载`README.md`里面提供的四个zip，移动外部文件进来
+```sh
+docker cp -r ~/Downloads/for_RIFT_20250714 
+```
+最好重新删掉然后安装一下RIFT(`python3 -m pip install .`)便于版本管理，整理directory
+```sh
+unzip /workspace/for_RIFT_20250714/PlanT_medium-20250711T161141Z-1-001.zip -d /workspace/RIFT/rift/ego/model_ckpt/
+unzip /workspace/for_RIFT_20250714/pluto-20250711T161146Z-1-001.zip -d /workspace/RIFT/rift/cbv/planning/model_ckpt/
+unzip -j /workspace/for_RIFT_20250714/HD-Map-20250714T063845Z-1-001.zip -d /workspace/RIFT/data/map_data/
+unzip -j /workspace/for_RIFT_20250714/Speed-Limits-20250711T161132Z-1-001.zip -d /workspace/RIFT/data/speed_limits/
+```
+运行验证方式参考`README.md`
