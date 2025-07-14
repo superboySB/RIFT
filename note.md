@@ -22,9 +22,37 @@ docker cp ~/Downloads/for_RIFT_20250714 dzp-carla-test:/workspace/
 ```
 最好重新删掉然后安装一下RIFT(`python3 -m pip install .`)便于版本管理，整理directory
 ```sh
-unzip /workspace/for_RIFT_20250714/PlanT_medium-20250711T161141Z-1-001.zip -d /workspace/RIFT/rift/ego/model_ckpt/
-unzip /workspace/for_RIFT_20250714/pluto-20250711T161146Z-1-001.zip -d /workspace/RIFT/rift/cbv/planning/model_ckpt/
-unzip -j /workspace/for_RIFT_20250714/HD-Map-20250714T063845Z-1-001.zip -d /workspace/RIFT/data/map_data/
+unzip /workspace/for_RIFT_20250714/PlanT_medium-20250711T161141Z-1-001.zip -d /workspace/RIFT/rift/ego/model_ckpt/ && \
+unzip /workspace/for_RIFT_20250714/pluto-20250711T161146Z-1-001.zip -d /workspace/RIFT/rift/cbv/planning/model_ckpt/ && \
+unzip -j /workspace/for_RIFT_20250714/HD-Map-20250714T063845Z-1-001.zip -d /workspace/RIFT/data/map_data/ && \
 unzip -j /workspace/for_RIFT_20250714/Speed-Limits-20250711T161132Z-1-001.zip -d /workspace/RIFT/data/speed_limits/
 ```
 运行验证方式参考`README.md`
+
+## QA
+### 便于递交IT
+```sh
+docker commit [容器ID或名字] [新镜像名:标签]
+docker save 
+docker load
+```
+### 换源
+```sh
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo vim /etc/apt/sources.list
+```
+写进去
+```bash
+deb http://mirrors.cowarobot.cn/ubuntu jammy main restricted universe multiverse
+deb http://mirrors.cowarobot.cn/ubuntu jammy-updates main restricted universe multiverse
+deb http://mirrors.cowarobot.cn/ubuntu jammy-backports main restricted universe multiverse
+deb http://mirrors.cowarobot.cn/ubuntu jammy-security main restricted universe multiverse
+```
+然后重新
+```
+sudo apt-get update
+```
+### 换代理
+```sh
+unset https_proxy && unset http_proxy
+```
