@@ -18,7 +18,7 @@ cd ~ && bash ./CarlaUE4.sh
 ```
 测试carla功能正常即可，然后下载`README.md`里面提供的四个zip，移动外部文件进来
 ```sh
-docker cp -r ~/Downloads/for_RIFT_20250714 
+docker cp ~/Downloads/for_RIFT_20250714 dzp-carla-test:/workspace/
 ```
 最好重新删掉然后安装一下RIFT(`python3 -m pip install .`)便于版本管理，整理directory
 ```sh
