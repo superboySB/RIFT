@@ -1,0 +1,91 @@
+
+HD Map 数据结构解释文件
+=====================================
+城镇: Town03
+生成时间: extract_complete_npz_data.py 运行结果
+
+1. 文件基本信息 (file_info)
+   - town_name: 城镇名称
+   - file_size_mb: 文件大小（MB）
+   - total_top_level_keys: 顶层数据项总数
+   - all_top_level_keys: 所有顶层键值列表
+
+2. 道路数据结构 (roads)
+   每个道路ID包含：
+   - road_id: CARLA道路ID
+   - lanes: 车道信息字典
+     - lane_id: 车道ID（负数表示相对于道路中心线的位置）
+     - lane_type: 车道类型（通常为 'Driving'）
+     - lane_width: 车道宽度（米）
+     - lane_markings: 车道标记信息
+       - Center: 中心标记
+       - Left: 左侧标记  
+       - Right: 右侧标记
+       
+   车道标记详细信息：
+   - type: 标记类型
+     * 'Center': 中心标记
+     * 'Broken': 虚线
+     * 'Solid': 实线
+     * 'SolidSolid': 双实线
+     * 'NONE': 无标记
+   - color: 标记颜色
+     * 'White': 白色
+     * 'Yellow': 黄色
+     * 'Blue': 蓝色
+   - topology_type: 拓扑类型（仅中心标记有此字段）
+     * 'Normal': 正常路段
+     * 'Junction': 交叉口
+     * 'EnterNormal': 进入正常路段
+     * 'EnterJunction': 进入交叉口
+   - topology_connections: 拓扑连接信息，格式为 [[road_id, lane_id], ...]
+   - left_adjacent_lane: 左侧相邻车道 [road_id, lane_id]
+   - right_adjacent_lane: 右侧相邻车道 [road_id, lane_id]
+   - waypoints: 路径点列表
+     * location: 位置坐标 (x, y, z)，单位米
+     * rotation: 旋转角度 (roll, pitch, yaw)，单位弧度
+     * is_junction: 是否在交叉口
+   - total_waypoints: 总waypoint数量
+
+   - trigger_volumes: 触发区域列表（交通控制设施）
+     - type: 父对象类型
+       * 'TrafficLight': 交通信号灯
+       * 'StopSign': 停车标志
+     - ParentActor_Location: 父对象位置 [x, y, z]
+     - Polygon: 触发区域多边形
+       * coordinates: 多边形顶点坐标列表
+       * area: 面积（平方米）
+       * bounds: 边界框 (min_x, min_y, max_x, max_y)
+
+3. 人行横道数据 (crosswalks)
+   每个人行横道包含：
+   - Location: 中心位置 [x, y]
+   - Polygon: 人行横道多边形区域
+     * coordinates: 多边形顶点坐标列表
+     * area: 面积（平方米）
+     * bounds: 边界框
+
+4. 统计信息 (statistics)
+   - total_roads: 总道路数
+   - total_crosswalks: 总人行横道数
+   - roads_shown_in_detail: 详细展示的道路数（限制为前5个）
+   - note: 数据展示说明
+
+5. 坐标系统
+   - 使用右手坐标系
+   - X轴：东向为正
+   - Y轴：北向为正
+   - Z轴：上向为正
+   - 角度单位：弧度
+   - 距离单位：米
+
+6. 车道ID说明
+   - 负数ID：表示与道路方向相反的车道
+   - 正数ID：表示与道路方向相同的车道
+   - 绝对值越大，离道路中心线越远
+
+7. 数据使用注意事项
+   - 本JSON仅展示前5个道路的详细信息
+   - 每个车道标记仅展示前10个waypoint
+   - 完整数据包含所有道路和所有waypoint
+   - 人行横道和触发区域数据完整展示

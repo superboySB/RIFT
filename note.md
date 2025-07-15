@@ -29,7 +29,12 @@ unzip -j /workspace/for_RIFT_20250714/Speed-Limits-20250711T161132Z-1-001.zip -d
 ```
 运行验证方式参考`README.md`
 
+## 研究数据对接
+```sh
+python data/extract_complete_npz_data.py
+```
 ## QA
+
 ### 便于递交IT
 ```sh
 docker commit [容器ID或名字] [新镜像名:标签] # 如dzp_carla:0715
@@ -49,7 +54,7 @@ deb http://mirrors.cowarobot.cn/ubuntu jammy-backports main restricted universe 
 deb http://mirrors.cowarobot.cn/ubuntu jammy-security main restricted universe multiverse
 ```
 然后重新
-```
+```sh
 sudo apt-get update
 ```
 ### 换代理

@@ -134,7 +134,7 @@ if __name__ == '__main__':
     parser.add_argument('--cbv_cfg', type=str, default='standard_eval.yaml')
     parser.add_argument('--collect_data_cfg', type=str, default='collect_data.yaml')
     # simulation-related
-    parser.add_argument('--spectator', '-sp', action='store_true', default=False)
+    parser.add_argument('--spectator', '-sp', action='store_true', default=False) # 观察者摄像机会持续跟随主车移动
     parser.add_argument('--render', action='store_true', default=False)
     parser.add_argument('--no_resume', action='store_false', dest='resume', help='Do not resume execution (default: resume=True)')
     parser.add_argument('--frame_skip', '-fs', type=int, default=1, help='skip of frame in each step')
@@ -142,7 +142,7 @@ if __name__ == '__main__':
     parser.add_argument('--base_port', type=int, default=30000, help='port to communicate with carla')
     parser.add_argument('--base_tm_port', type=int, default=50000, help='traffic manager port')
     parser.add_argument('--frame_rate', '-fps', type=float, default=10.0)
-    parser.add_argument('--timeout', default=300.0, type=float, help='Set the CARLA client timeout value in seconds')
+    parser.add_argument('--timeout', default=600.0, type=float, help='Set the CARLA client timeout value in seconds')
     args = parser.parse_args()
 
     # set the seed and device

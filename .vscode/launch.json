@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug RIFT Pluto Training",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/run.py",
+            "args": [
+                "--ego_cfg",
+                "pdm_lite.yaml",
+                "--cbv_cfg", 
+                "rift_pluto.yaml",
+                "--mode",
+                "train_cbv"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "CARLA_ROOT": "/home/carla",
+                "PYTHONPATH": "${env:PYTHONPATH}:/home/carla/PythonAPI:/home/carla/PythonAPI/carla:/home/carla/PythonAPI/carla/dist/carla-0.9.15-py3.7-linux-x86_64.egg"
+            },
+            "python": "/usr/bin/python3",
+            "stopOnEntry": false,
+            "justMyCode": false,
+            "subProcess": true
+        }
+    ]
+} 
