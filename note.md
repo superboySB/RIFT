@@ -32,7 +32,7 @@ unzip -j /workspace/for_RIFT_20250714/Speed-Limits-20250711T161132Z-1-001.zip -d
 ## QA
 ### 便于递交IT
 ```sh
-docker commit [容器ID或名字] [新镜像名:标签]
+docker commit [容器ID或名字] [新镜像名:标签] # 如dzp_carla:0715
 docker save 
 docker load
 ```
