@@ -1,0 +1,5218 @@
+{
+  "file_info": {
+    "town_name": "Town02",
+    "file_size_mb": 0.64,
+    "total_top_level_keys": 69,
+    "all_top_level_keys": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      31,
+      32,
+      47,
+      55,
+      62,
+      68,
+      92,
+      93,
+      99,
+      107,
+      118,
+      131,
+      134,
+      142,
+      148,
+      157,
+      177,
+      178,
+      199,
+      200,
+      216,
+      224,
+      232,
+      236,
+      245,
+      252,
+      276,
+      277,
+      283,
+      290,
+      301,
+      308,
+      317,
+      322,
+      341,
+      342,
+      351,
+      358,
+      383,
+      384,
+      385,
+      390,
+      411,
+      412,
+      426,
+      433,
+      437,
+      447,
+      "Crosswalks"
+    ]
+  },
+  "roads": {
+    "0": {
+      "road_id": 0,
+      "lanes": {
+        "-1": {
+          "lane_id": -1,
+          "lane_type": "Driving",
+          "lane_width": 4.0,
+          "lane_markings": {
+            "Center": [
+              {
+                "type": "Center",
+                "color": "White",
+                "topology_type": "Normal",
+                "topology_connections": [
+                  [
+                    426,
+                    -1
+                  ],
+                  [
+                    412,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": [
+                  0,
+                  1
+                ],
+                "right_adjacent_lane": [
+                  0,
+                  -2
+                ],
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -3.370002269744873,
+                      "y": -294.6968078613281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -3.3707962036132812,
+                      "y": -294.1968078613281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -3.3715901374816895,
+                      "y": -293.6968078613281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -3.3723840713500977,
+                      "y": -293.1968078613281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -3.373178482055664,
+                      "y": -292.6968078613281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -3.3739724159240723,
+                      "y": -292.1968078613281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -3.3747663497924805,
+                      "y": -291.6968078613281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -3.3755602836608887,
+                      "y": -291.1968078613281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -3.376354217529297,
+                      "y": -290.6968078613281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -3.377148151397705,
+                      "y": -290.1968078613281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 191
+              }
+            ],
+            "Left": [
+              {
+                "type": "Broken",
+                "color": "Yellow",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    426,
+                    -1
+                  ],
+                  [
+                    412,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -5.3699997663497925,
+                      "y": -294.6999836829491,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -5.370793700218201,
+                      "y": -294.1999836829491,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -5.371587634086609,
+                      "y": -293.6999836829491,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -5.372381567955017,
+                      "y": -293.1999836829491,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -5.3731759786605835,
+                      "y": -292.6999836829491,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -5.373969912528992,
+                      "y": -292.1999836829491,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -5.3747638463974,
+                      "y": -291.6999836829491,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -5.375557780265808,
+                      "y": -291.1999836829491,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -5.376351714134216,
+                      "y": -290.6999836829491,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -5.3771456480026245,
+                      "y": -290.1999836829491,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 191
+              }
+            ],
+            "Right": [
+              {
+                "type": "NONE",
+                "color": "White",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    426,
+                    -1
+                  ],
+                  [
+                    412,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -1.3700047731399536,
+                      "y": -294.69363203970715,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -1.3707987070083618,
+                      "y": -294.19363203970715,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -1.37159264087677,
+                      "y": -293.69363203970715,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -1.3723865747451782,
+                      "y": -293.19363203970715,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -1.3731809854507446,
+                      "y": -292.69363203970715,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -1.3739749193191528,
+                      "y": -292.19363203970715,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -1.374768853187561,
+                      "y": -291.69363203970715,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -1.3755627870559692,
+                      "y": -291.19363203970715,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -1.3763567209243774,
+                      "y": -290.69363203970715,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -1.3771506547927856,
+                      "y": -290.19363203970715,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5723842365948564
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 191
+              }
+            ]
+          }
+        },
+        "1": {
+          "lane_id": 1,
+          "lane_type": "Driving",
+          "lane_width": 4.0,
+          "lane_markings": {
+            "Center": [
+              {
+                "type": "Center",
+                "color": "White",
+                "topology_type": "Normal",
+                "topology_connections": [
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": [
+                  0,
+                  -1
+                ],
+                "right_adjacent_lane": [
+                  0,
+                  2
+                ],
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -7.451600551605225,
+                      "y": -199.24049377441406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -7.451488018035889,
+                      "y": -199.74049377441406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -7.4513750076293945,
+                      "y": -200.24049377441406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -7.4512619972229,
+                      "y": -200.74049377441406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -7.451148986816406,
+                      "y": -201.24049377441406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -7.45103645324707,
+                      "y": -201.74049377441406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -7.450923442840576,
+                      "y": -202.24049377441406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -7.450810432434082,
+                      "y": -202.74049377441406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -7.450697422027588,
+                      "y": -203.24049377441406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -7.450584888458252,
+                      "y": -203.74049377441406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 191
+              }
+            ],
+            "Left": [
+              {
+                "type": "Broken",
+                "color": "Yellow",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -5.451600551605225,
+                      "y": -199.24004229705315,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -5.451488018035889,
+                      "y": -199.74004229705315,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -5.4513750076293945,
+                      "y": -200.24004229705315,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -5.4512619972229,
+                      "y": -200.74004229705315,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -5.451148986816406,
+                      "y": -201.24004229705315,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -5.45103645324707,
+                      "y": -201.74004229705315,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -5.450923442840576,
+                      "y": -202.24004229705315,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -5.450810432434082,
+                      "y": -202.74004229705315,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -5.450697422027588,
+                      "y": -203.24004229705315,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -5.450584888458252,
+                      "y": -203.74004229705315,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 191
+              }
+            ],
+            "Right": [
+              {
+                "type": "NONE",
+                "color": "White",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -9.451600551605225,
+                      "y": -199.24094525177497,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -9.451488018035889,
+                      "y": -199.74094525177497,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -9.451375007629395,
+                      "y": -200.24094525177497,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -9.4512619972229,
+                      "y": -200.74094525177497,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -9.451148986816406,
+                      "y": -201.24094525177497,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -9.45103645324707,
+                      "y": -201.74094525177497,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -9.450923442840576,
+                      "y": -202.24094525177497,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -9.450810432434082,
+                      "y": -202.74094525177497,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -9.450697422027588,
+                      "y": -203.24094525177497,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -9.450584888458252,
+                      "y": -203.74094525177497,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5705706238925123
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 191
+              }
+            ]
+          }
+        }
+      },
+      "trigger_volumes": [
+        {
+          "Polygon": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                -5.051572322845459,
+                -199.36514282226562,
+                0.0
+              ],
+              [
+                -1.8515723943710327,
+                -199.36441040039062,
+                0.0
+              ],
+              [
+                -1.8514593839645386,
+                -199.86441040039062,
+                0.0
+              ],
+              [
+                -5.051459312438965,
+                -199.86514282226562,
+                0.0
+              ],
+              [
+                -5.051572322845459,
+                -199.36514282226562,
+                0.0
+              ]
+            ],
+            "area": 1.600000047008507,
+            "bounds": [
+              -5.051572322845459,
+              -199.86514282226562,
+              -1.8514593839645386,
+              -199.36441040039062
+            ]
+          },
+          "Type": "TrafficLight",
+          "ParentActor_Location": [
+            -0.8199999928474426,
+            -202.51998901367188,
+            0.2199999988079071
+          ]
+        }
+      ]
+    },
+    "1": {
+      "road_id": 1,
+      "lanes": {
+        "-1": {
+          "lane_id": -1,
+          "lane_type": "Driving",
+          "lane_width": 4.0,
+          "lane_markings": {
+            "Center": [
+              {
+                "type": "Center",
+                "color": "White",
+                "topology_type": "Normal",
+                "topology_connections": [
+                  [
+                    16,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": [
+                  1,
+                  1
+                ],
+                "right_adjacent_lane": [
+                  1,
+                  -2
+                ],
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -3.455665111541748,
+                      "y": -181.2395782470703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -3.455778121948242,
+                      "y": -180.7395782470703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -3.4558911323547363,
+                      "y": -180.2395782470703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -3.4560036659240723,
+                      "y": -179.7395782470703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -3.4561166763305664,
+                      "y": -179.2395782470703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -3.4562296867370605,
+                      "y": -178.7395782470703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -3.4563426971435547,
+                      "y": -178.2395782470703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -3.4564552307128906,
+                      "y": -177.7395782470703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -3.4565682411193848,
+                      "y": -177.2395782470703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -3.456681251525879,
+                      "y": -176.7395782470703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 128
+              }
+            ],
+            "Left": [
+              {
+                "type": "Broken",
+                "color": "Yellow",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    16,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -5.455665111541748,
+                      "y": -181.24002966086846,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -5.455778121948242,
+                      "y": -180.74002966086846,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -5.455891132354736,
+                      "y": -180.24002966086846,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -5.456003665924072,
+                      "y": -179.74002966086846,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -5.456116676330566,
+                      "y": -179.24002966086846,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -5.4562296867370605,
+                      "y": -178.74002966086846,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -5.456342697143555,
+                      "y": -178.24002966086846,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -5.456455230712891,
+                      "y": -177.74002966086846,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -5.456568241119385,
+                      "y": -177.24002966086846,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -5.456681251525879,
+                      "y": -176.74002966086846,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 128
+              }
+            ],
+            "Right": [
+              {
+                "type": "NONE",
+                "color": "White",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    16,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -1.455665111541748,
+                      "y": -181.23912683327217,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -1.4557781219482422,
+                      "y": -180.73912683327217,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -1.4558911323547363,
+                      "y": -180.23912683327217,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -1.4560036659240723,
+                      "y": -179.73912683327217,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -1.4561166763305664,
+                      "y": -179.23912683327217,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -1.4562296867370605,
+                      "y": -178.73912683327217,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -1.4563426971435547,
+                      "y": -178.23912683327217,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -1.4564552307128906,
+                      "y": -177.73912683327217,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -1.4565682411193848,
+                      "y": -177.23912683327217,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -1.456681251525879,
+                      "y": -176.73912683327217,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 1.5710220296972808
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 128
+              }
+            ]
+          }
+        },
+        "1": {
+          "lane_id": 1,
+          "lane_type": "Driving",
+          "lane_width": 4.0,
+          "lane_markings": {
+            "Center": [
+              {
+                "type": "Center",
+                "color": "White",
+                "topology_type": "Normal",
+                "topology_connections": [
+                  [
+                    437,
+                    1
+                  ],
+                  [
+                    411,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": [
+                  1,
+                  -1
+                ],
+                "right_adjacent_lane": [
+                  1,
+                  2
+                ],
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -7.359994888305664,
+                      "y": -117.55550384521484,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -7.361119270324707,
+                      "y": -118.05550384521484,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -7.362242698669434,
+                      "y": -118.55550384521484,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -7.363367080688477,
+                      "y": -119.05549621582031,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -7.3644914627075195,
+                      "y": -119.55549621582031,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -7.365614891052246,
+                      "y": -120.05549621582031,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -7.366739273071289,
+                      "y": -120.55548858642578,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -7.367863655090332,
+                      "y": -121.05548858642578,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -7.368987083435059,
+                      "y": -121.55548858642578,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -7.370111465454102,
+                      "y": -122.05548858642578,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 128
+              }
+            ],
+            "Left": [
+              {
+                "type": "Broken",
+                "color": "Yellow",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    437,
+                    1
+                  ],
+                  [
+                    411,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -5.359999895095825,
+                      "y": -117.56000050343573,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -5.361124277114868,
+                      "y": -118.06000050343573,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -5.362247705459595,
+                      "y": -118.56000050343573,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -5.363372087478638,
+                      "y": -119.0599928740412,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -5.364496469497681,
+                      "y": -119.5599928740412,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -5.365619897842407,
+                      "y": -120.0599928740412,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -5.36674427986145,
+                      "y": -120.55998524464667,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -5.367868661880493,
+                      "y": -121.05998524464667,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -5.36899209022522,
+                      "y": -121.55998524464667,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -5.370116472244263,
+                      "y": -122.05998524464667,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 128
+              }
+            ],
+            "Right": [
+              {
+                "type": "NONE",
+                "color": "White",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    437,
+                    1
+                  ],
+                  [
+                    411,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -9.359989881515503,
+                      "y": -117.55100718699396,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -9.361114263534546,
+                      "y": -118.05100718699396,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -9.362237691879272,
+                      "y": -118.55100718699396,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -9.363362073898315,
+                      "y": -119.05099955759943,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -9.364486455917358,
+                      "y": -119.55099955759943,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -9.365609884262085,
+                      "y": -120.05099955759943,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -9.366734266281128,
+                      "y": -120.5509919282049,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -9.367858648300171,
+                      "y": -121.0509919282049,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -9.368982076644897,
+                      "y": -121.5509919282049,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -9.37010645866394,
+                      "y": -122.0509919282049,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.573044700545196
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 128
+              }
+            ]
+          }
+        }
+      },
+      "trigger_volumes": [
+        {
+          "Polygon": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                -5.855676651000977,
+                -181.18911743164062,
+                0.0
+              ],
+              [
+                -9.055676460266113,
+                -181.18984985351562,
+                0.0
+              ],
+              [
+                -9.055789947509766,
+                -180.68984985351562,
+                0.0
+              ],
+              [
+                -5.855789661407471,
+                -180.68911743164062,
+                0.0
+              ],
+              [
+                -5.855676651000977,
+                -181.18911743164062,
+                0.0
+              ]
+            ],
+            "area": 1.6000001067877747,
+            "bounds": [
+              -9.055789947509766,
+              -181.18984985351562,
+              -5.855676651000977,
+              -180.68911743164062
+            ]
+          },
+          "Type": "TrafficLight",
+          "ParentActor_Location": [
+            -10.079999923706055,
+            -177.88999938964844,
+            0.2199999988079071
+          ]
+        }
+      ]
+    },
+    "2": {
+      "road_id": 2,
+      "lanes": {
+        "-1": {
+          "lane_id": -1,
+          "lane_type": "Driving",
+          "lane_width": 4.0,
+          "lane_markings": {
+            "Center": [
+              {
+                "type": "Center",
+                "color": "White",
+                "topology_type": "Normal",
+                "topology_connections": [
+                  [
+                    0,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": [
+                  2,
+                  1
+                ],
+                "right_adjacent_lane": [
+                  2,
+                  -2
+                ],
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 4.618636608123779,
+                      "y": -302.55999755859375,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.140910884350733
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 4.118636608123779,
+                      "y": -302.5603332519531,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.140910884350733
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 3.6186370849609375,
+                      "y": -302.5606689453125,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.140910884350733
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 3.212463617324829,
+                      "y": -302.5524597167969,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.1877606816151887
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 2.816143274307251,
+                      "y": -302.52392578125,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.2390664800155653
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 2.4218063354492188,
+                      "y": -302.4751281738281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.290372278415942
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 2.0304911136627197,
+                      "y": -302.4061584472656,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.3416780768163186
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 1.6432273387908936,
+                      "y": -302.3172302246094,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.392983608900586
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 1.2610337734222412,
+                      "y": -302.2085876464844,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.4442894073009627
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 0.8849168419837952,
+                      "y": -302.0804443359375,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.495595205701339
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 33
+              }
+            ],
+            "Left": [
+              {
+                "type": "Broken",
+                "color": "Yellow",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    0,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 4.6200001874240115,
+                      "y": -304.5599970817566,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.140910884350733
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 4.1200001874240115,
+                      "y": -304.56033277511597,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.140910884350733
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 3.6200006642611697,
+                      "y": -304.56066846847534,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.140910884350733
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 3.1201605424284935,
+                      "y": -304.5503286123276,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.1877606816151887
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 2.6215044111013412,
+                      "y": -304.51443219184875,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.2390664800155653
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 2.125343441963196,
+                      "y": -304.4530335664749,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.290372278415942
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 1.6329848766326904,
+                      "y": -304.3662576675415,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.3416780768163186
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 1.145724356174469,
+                      "y": -304.2543648481369,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.392983608900586
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 0.6648428440093994,
+                      "y": -304.1176598072052,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.4442894073009627
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 0.19160693883895874,
+                      "y": -303.9564297199249,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.495595205701339
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 33
+              }
+            ],
+            "Right": [
+              {
+                "type": "NONE",
+                "color": "White",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    0,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 4.617273028823547,
+                      "y": -300.5599980354309,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.140910884350733
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 4.117273028823547,
+                      "y": -300.5603337287903,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.140910884350733
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 3.6172735056607053,
+                      "y": -300.56066942214966,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.140910884350733
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 3.3047666922211647,
+                      "y": -300.5545908212662,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.1877606816151887
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 3.0107821375131607,
+                      "y": -300.53341937065125,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.2390664800155653
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 2.7182692289352417,
+                      "y": -300.49722278118134,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.290372278415942
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 2.427997350692749,
+                      "y": -300.44605922698975,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.3416780768163186
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 2.140730321407318,
+                      "y": -300.38009560108185,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.392983608900586
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 1.857224702835083,
+                      "y": -300.29951548576355,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.4442894073009627
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 1.5782267451286316,
+                      "y": -300.2044589519501,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -3.495595205701339
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 33
+              }
+            ]
+          }
+        },
+        "1": {
+          "lane_id": 1,
+          "lane_type": "Driving",
+          "lane_width": 4.0,
+          "lane_markings": {
+            "Center": [
+              {
+                "type": "Center",
+                "color": "White",
+                "topology_type": "Normal",
+                "topology_connections": [
+                  [
+                    18,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": [
+                  2,
+                  -1
+                ],
+                "right_adjacent_lane": [
+                  2,
+                  2
+                ],
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -7.369997024536133,
+                      "y": -294.7034912109375,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -7.369202613830566,
+                      "y": -295.2034912109375,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -7.368408679962158,
+                      "y": -295.7034912109375,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -7.36761474609375,
+                      "y": -296.2034912109375,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -7.364809513092041,
+                      "y": -296.7439270019531,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.832154365680194
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -7.329933166503906,
+                      "y": -297.37603759765625,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.765568414209378
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -7.253076553344727,
+                      "y": -298.00439453125,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.698982462738563
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -7.134581089019775,
+                      "y": -298.62628173828125,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.632397043899966
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -6.974970817565918,
+                      "y": -299.2388610839844,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.565811092429151
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -6.774953842163086,
+                      "y": -299.8395080566406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.499225140958336
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 33
+              }
+            ],
+            "Left": [
+              {
+                "type": "Broken",
+                "color": "Yellow",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    18,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -5.369999527931213,
+                      "y": -294.70031532575376,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -5.369205117225647,
+                      "y": -295.20031532575376,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -5.368411183357239,
+                      "y": -295.70031532575376,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -5.367617249488831,
+                      "y": -296.20031532575376,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -5.365285873413086,
+                      "y": -296.7002757489681,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.832154365680194
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -5.337744951248169,
+                      "y": -297.1994411200285,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.765568414209378
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -5.277053356170654,
+                      "y": -297.69563552737236,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.698982462738563
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -5.183480143547058,
+                      "y": -298.18673050403595,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.632397043899966
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -5.057439923286438,
+                      "y": -298.67046386003494,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.565811092429151
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -4.899491667747498,
+                      "y": -299.14478397369385,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.499225140958336
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 33
+              }
+            ],
+            "Right": [
+              {
+                "type": "NONE",
+                "color": "White",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    18,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": -9.369994521141052,
+                      "y": -294.70666709612124,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": -9.369200110435486,
+                      "y": -295.20666709612124,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": -9.368406176567078,
+                      "y": -295.70666709612124,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": -9.36761224269867,
+                      "y": -296.20666709612124,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -1.5692084169949367
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": -9.364333152770996,
+                      "y": -296.7875782549381,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.832154365680194
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": -9.322121381759644,
+                      "y": -297.552634075284,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.765568414209378
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": -9.229099750518799,
+                      "y": -298.31315353512764,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.698982462738563
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": -9.085682034492493,
+                      "y": -299.06583297252655,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.632397043899966
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": -8.892501711845398,
+                      "y": -299.8072583079338,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.565811092429151
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": -8.650416016578674,
+                      "y": -300.5342321395874,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -7.499225140958336
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 33
+              }
+            ]
+          }
+        }
+      },
+      "trigger_volumes": []
+    },
+    "3": {
+      "road_id": 3,
+      "lanes": {
+        "-1": {
+          "lane_id": -1,
+          "lane_type": "Driving",
+          "lane_width": 4.0,
+          "lane_markings": {
+            "Center": [
+              {
+                "type": "Center",
+                "color": "White",
+                "topology_type": "Normal",
+                "topology_connections": [
+                  [
+                    15,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": [
+                  3,
+                  1
+                ],
+                "right_adjacent_lane": [
+                  3,
+                  -2
+                ],
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 181.50135803222656,
+                      "y": -109.41999816894531,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 0.000679166220157909
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 181.91433715820312,
+                      "y": -109.42754364013672,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.04277372934754879
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 182.31629943847656,
+                      "y": -109.45454406738281,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.09132346394769435
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 182.71646118164062,
+                      "y": -109.50100708007812,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.1398731985478399
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 183.11390686035156,
+                      "y": -109.56683349609375,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.18842292482560705
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 183.5076904296875,
+                      "y": -109.6518783569336,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.236972667748131
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 183.89688110351562,
+                      "y": -109.75593566894531,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.28552239402589813
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 184.2805633544922,
+                      "y": -109.87874603271484,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.3340721203036653
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 184.6578369140625,
+                      "y": -110.0200424194336,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.3826218798709461
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 185.02780151367188,
+                      "y": -110.17948150634766,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.4311715728591996
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 34
+              }
+            ],
+            "Left": [
+              {
+                "type": "Broken",
+                "color": "Yellow",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    15,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 181.4999996998813,
+                      "y": -107.41999864578247,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 0.000679166220157909
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 181.99985852837563,
+                      "y": -107.42937290668488,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.04277372934754879
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 182.49869260191917,
+                      "y": -107.46287822723389,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.09132346394769435
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 182.99529626965523,
+                      "y": -107.5205397605896,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.1398731985478399
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 183.48852679133415,
+                      "y": -107.60223174095154,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.18842292482560705
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 183.977212369442,
+                      "y": -107.70777213573456,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.236972667748131
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 184.46019858121872,
+                      "y": -107.83690643310547,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.28552239402589813
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 184.9363487958908,
+                      "y": -107.98931610584259,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.3340721203036653
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 185.4045450091362,
+                      "y": -108.16466450691223,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.3826218798709461
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 185.86367237567902,
+                      "y": -108.36252808570862,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.4311715728591996
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 34
+              }
+            ],
+            "Right": [
+              {
+                "type": "NONE",
+                "color": "White",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    15,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 181.50271636457182,
+                      "y": -111.41999769210815,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": 0.000679166220157909
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 181.82881578803062,
+                      "y": -111.42571437358856,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.04277372934754879
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 182.13390627503395,
+                      "y": -111.44620990753174,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.09132346394769435
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 182.43762609362602,
+                      "y": -111.48147439956665,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.1398731985478399
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 182.73928692936897,
+                      "y": -111.53143525123596,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.18842292482560705
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 183.038168489933,
+                      "y": -111.59598457813263,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.236972667748131
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 183.33356362581253,
+                      "y": -111.67496490478516,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.28552239402589813
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 183.62477791309357,
+                      "y": -111.7681759595871,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.3340721203036653
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 183.9111288189888,
+                      "y": -111.87542033195496,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.3826218798709461
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 184.19193065166473,
+                      "y": -111.9964349269867,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.4311715728591996
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 34
+              }
+            ]
+          }
+        },
+        "1": {
+          "lane_id": 1,
+          "lane_type": "Driving",
+          "lane_width": 4.0,
+          "lane_markings": {
+            "Center": [
+              {
+                "type": "Center",
+                "color": "White",
+                "topology_type": "Normal",
+                "topology_connections": [
+                  [
+                    12,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": [
+                  3,
+                  -1
+                ],
+                "right_adjacent_lane": [
+                  3,
+                  2
+                ],
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 193.739990234375,
+                      "y": -118.07231140136719,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.71374719254063
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 193.7406768798828,
+                      "y": -117.57231140136719,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.71374719254063
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 193.7324981689453,
+                      "y": -116.99483489990234,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.674958251263626
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 193.69488525390625,
+                      "y": -116.39517974853516,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.624506794940947
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 193.6270751953125,
+                      "y": -115.79817199707031,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.574055338618268
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 193.52923583984375,
+                      "y": -115.20536041259766,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.523603882295589
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 193.40162658691406,
+                      "y": -114.61822509765625,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.47315242597291
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 193.2445831298828,
+                      "y": -114.03827667236328,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.4227007033341215
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 193.0584716796875,
+                      "y": -113.46697998046875,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.3722492470114425
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 192.8437957763672,
+                      "y": -112.90580749511719,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.321797524372655
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 34
+              }
+            ],
+            "Left": [
+              {
+                "type": "Broken",
+                "color": "Yellow",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    12,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 191.73999202251434,
+                      "y": -118.06959531386383,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.71374719254063
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 191.74067866802216,
+                      "y": -117.56959531386383,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.71374719254063
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 191.7338991165161,
+                      "y": -117.06967892497778,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.674958251263626
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 191.7026035785675,
+                      "y": -116.5707176476717,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.624506794940947
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 191.6461809873581,
+                      "y": -116.07395800948143,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.574055338618268
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 191.56476986408234,
+                      "y": -115.58069178462029,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.523603882295589
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 191.4585883617401,
+                      "y": -115.09214758872986,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.47315242597291
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 191.32791709899902,
+                      "y": -114.60958331823349,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.4227007033341215
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 191.1730556488037,
+                      "y": -114.13421785831451,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.3722492470114425
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 190.99442780017853,
+                      "y": -113.66727858781815,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.321797524372655
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 34
+              }
+            ],
+            "Right": [
+              {
+                "type": "NONE",
+                "color": "White",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    12,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 195.73998844623566,
+                      "y": -118.07502748887055,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.71374719254063
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 195.74067509174347,
+                      "y": -117.57502748887055,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.71374719254063
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 195.7310972213745,
+                      "y": -116.91999087482691,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.674958251263626
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 195.687166929245,
+                      "y": -116.21964184939861,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.624506794940947
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 195.6079694032669,
+                      "y": -115.5223859846592,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.574055338618268
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 195.49370181560516,
+                      "y": -114.83002904057503,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.523603882295589
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 195.344664812088,
+                      "y": -114.14430260658264,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.47315242597291
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 195.1612491607666,
+                      "y": -113.46697002649307,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.4227007033341215
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 194.9438877105713,
+                      "y": -112.79974210262299,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.3722492470114425
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 194.69316375255585,
+                      "y": -112.14433640241623,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -4.321797524372655
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 34
+              }
+            ]
+          }
+        }
+      },
+      "trigger_volumes": []
+    },
+    "4": {
+      "road_id": 4,
+      "lanes": {
+        "-1": {
+          "lane_id": -1,
+          "lane_type": "Driving",
+          "lane_width": 4.0,
+          "lane_markings": {
+            "Center": [
+              {
+                "type": "Center",
+                "color": "White",
+                "topology_type": "Normal",
+                "topology_connections": [
+                  [
+                    232,
+                    -1
+                  ],
+                  [
+                    199,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": [
+                  4,
+                  1
+                ],
+                "right_adjacent_lane": [
+                  4,
+                  -2
+                ],
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 3.3990821838378906,
+                      "y": -191.55380249023438,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 3.8990821838378906,
+                      "y": -191.5540313720703,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 4.399081707000732,
+                      "y": -191.55426025390625,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 4.899081707000732,
+                      "y": -191.5544891357422,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 5.399081707000732,
+                      "y": -191.55471801757812,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 5.899081707000732,
+                      "y": -191.55494689941406,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 6.399081707000732,
+                      "y": -191.55517578125,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 6.899081707000732,
+                      "y": -191.55540466308594,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 7.399081707000732,
+                      "y": -191.55563354492188,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 7.899081707000732,
+                      "y": -191.5558624267578,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 63
+              }
+            ],
+            "Left": [
+              {
+                "type": "Broken",
+                "color": "Yellow",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    232,
+                    -1
+                  ],
+                  [
+                    199,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 3.399998923414387,
+                      "y": -189.55380272865295,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 3.899998923414387,
+                      "y": -189.5540316104889,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 4.399998446577229,
+                      "y": -189.55426049232483,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 4.899998446577229,
+                      "y": -189.55448937416077,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 5.399998446577229,
+                      "y": -189.5547182559967,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 5.899998446577229,
+                      "y": -189.55494713783264,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 6.399998446577229,
+                      "y": -189.55517601966858,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 6.899998446577229,
+                      "y": -189.55540490150452,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 7.399998446577229,
+                      "y": -189.55563378334045,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 7.899998446577229,
+                      "y": -189.5558626651764,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 63
+              }
+            ],
+            "Right": [
+              {
+                "type": "NONE",
+                "color": "White",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    232,
+                    -1
+                  ],
+                  [
+                    199,
+                    -1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 3.3981654442613944,
+                      "y": -193.5538022518158,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 3.8981654442613944,
+                      "y": -193.55403113365173,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 4.398164967424236,
+                      "y": -193.55426001548767,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 4.898164967424236,
+                      "y": -193.5544888973236,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 5.398164967424236,
+                      "y": -193.55471777915955,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 5.898164967424236,
+                      "y": -193.55494666099548,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 6.398164967424236,
+                      "y": -193.55517554283142,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 6.898164967424236,
+                      "y": -193.55540442466736,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 7.398164967424236,
+                      "y": -193.5556333065033,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 7.898164967424236,
+                      "y": -193.55586218833923,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 0.0,
+                      "yaw": -0.00045836981497439296
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 63
+              }
+            ]
+          }
+        },
+        "1": {
+          "lane_id": 1,
+          "lane_type": "Driving",
+          "lane_width": 4.0,
+          "lane_markings": {
+            "Center": [
+              {
+                "type": "Center",
+                "color": "White",
+                "topology_type": "Normal",
+                "topology_connections": [
+                  [
+                    447,
+                    1
+                  ],
+                  [
+                    433,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": [
+                  4,
+                  -1
+                ],
+                "right_adjacent_lane": [
+                  4,
+                  2
+                ],
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 34.70091247558594,
+                      "y": -187.56814575195312,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 34.20091247558594,
+                      "y": -187.5679168701172,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 33.70091247558594,
+                      "y": -187.56768798828125,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 33.20091247558594,
+                      "y": -187.5674591064453,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 32.70091247558594,
+                      "y": -187.56723022460938,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 32.20091247558594,
+                      "y": -187.56700134277344,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 31.70091438293457,
+                      "y": -187.5667724609375,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 31.20091438293457,
+                      "y": -187.56654357910156,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 30.70091438293457,
+                      "y": -187.56631469726562,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 30.20091438293457,
+                      "y": -187.5660858154297,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 63
+              }
+            ],
+            "Left": [
+              {
+                "type": "Broken",
+                "color": "Yellow",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    447,
+                    1
+                  ],
+                  [
+                    433,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 34.699995819770265,
+                      "y": -189.56814551353455,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 34.199995819770265,
+                      "y": -189.5679166316986,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 33.699995819770265,
+                      "y": -189.56768774986267,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 33.199995819770265,
+                      "y": -189.56745886802673,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 32.699995819770265,
+                      "y": -189.5672299861908,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 32.199995819770265,
+                      "y": -189.56700110435486,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 31.699997727118898,
+                      "y": -189.56677222251892,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 31.199997727118898,
+                      "y": -189.56654334068298,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 30.699997727118898,
+                      "y": -189.56631445884705,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 30.199997727118898,
+                      "y": -189.5660855770111,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 63
+              }
+            ],
+            "Right": [
+              {
+                "type": "NONE",
+                "color": "White",
+                "topology_type": null,
+                "topology_connections": [
+                  [
+                    447,
+                    1
+                  ],
+                  [
+                    433,
+                    1
+                  ]
+                ],
+                "left_adjacent_lane": null,
+                "right_adjacent_lane": null,
+                "waypoints": [
+                  {
+                    "index": 0,
+                    "location": {
+                      "x": 34.70182913140161,
+                      "y": -185.5681459903717,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 1,
+                    "location": {
+                      "x": 34.20182913140161,
+                      "y": -185.56791710853577,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 2,
+                    "location": {
+                      "x": 33.70182913140161,
+                      "y": -185.56768822669983,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 3,
+                    "location": {
+                      "x": 33.20182913140161,
+                      "y": -185.5674593448639,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 4,
+                    "location": {
+                      "x": 32.70182913140161,
+                      "y": -185.56723046302795,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 5,
+                    "location": {
+                      "x": 32.20182913140161,
+                      "y": -185.56700158119202,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 6,
+                    "location": {
+                      "x": 31.701831038750242,
+                      "y": -185.56677269935608,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 7,
+                    "location": {
+                      "x": 31.201831038750242,
+                      "y": -185.56654381752014,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 8,
+                    "location": {
+                      "x": 30.701831038750242,
+                      "y": -185.5663149356842,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  },
+                  {
+                    "index": 9,
+                    "location": {
+                      "x": 30.201831038750242,
+                      "y": -185.56608605384827,
+                      "z": 0.0
+                    },
+                    "rotation": {
+                      "roll": 0.0,
+                      "pitch": 6.283185307179586,
+                      "yaw": -3.142050983613396
+                    },
+                    "is_junction": false
+                  }
+                ],
+                "total_waypoints": 63
+              }
+            ]
+          }
+        }
+      },
+      "trigger_volumes": [
+        {
+          "Polygon": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                3.563886880874634,
+                -189.1538848876953,
+                0.0
+              ],
+              [
+                3.5653536319732666,
+                -185.95387268066406,
+                0.0
+              ],
+              [
+                4.065353870391846,
+                -185.9541015625,
+                0.0
+              ],
+              [
+                4.063887119293213,
+                -189.15411376953125,
+                0.0
+              ],
+              [
+                3.563886880874634,
+                -189.1538848876953,
+                0.0
+              ]
+            ],
+            "area": 1.6000072021706728,
+            "bounds": [
+              3.563886880874634,
+              -189.15411376953125,
+              4.065353870391846,
+              -185.95387268066406
+            ]
+          },
+          "Type": "TrafficLight",
+          "ParentActor_Location": [
+            6.909999847412109,
+            -184.95999145507812,
+            0.2199999988079071
+          ]
+        },
+        {
+          "Polygon": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                34.69194412231445,
+                -189.9681396484375,
+                0.0
+              ],
+              [
+                34.69047927856445,
+                -193.16815185546875,
+                0.0
+              ],
+              [
+                34.19047927856445,
+                -193.1679229736328,
+                0.0
+              ],
+              [
+                34.19194412231445,
+                -189.96791076660156,
+                0.0
+              ],
+              [
+                34.69194412231445,
+                -189.9681396484375,
+                0.0
+              ]
+            ],
+            "area": 1.6000064387917519,
+            "bounds": [
+              34.19047927856445,
+              -193.16815185546875,
+              34.69194412231445,
+              -189.96791076660156
+            ]
+          },
+          "Type": "TrafficLight",
+          "ParentActor_Location": [
+            30.959989547729492,
+            -194.2899627685547,
+            0.2199999988079071
+          ]
+        }
+      ]
+    }
+  },
+  "crosswalks": [],
+  "statistics": {
+    "total_roads": 68,
+    "total_crosswalks": 0,
+    "roads_shown_in_detail": 5,
+    "note": "Only first 5 roads shown in detail, and only first 10 waypoints per lane marking"
+  }
+}

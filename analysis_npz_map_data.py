@@ -267,19 +267,20 @@ def main():
     """主函数"""
     
     # town_name = "Town01"
-    town_name = "Town03"
+    town_name = "Town02"
+    # town_name = "Town03"
     
     # 提取数据结构
     raw_data = extract_npz_structure(town_name)
     
     # 保存JSON数据文件
-    json_file = f"{town_name}_hd_map_data.json"
+    json_file = f"data/map_data/{town_name}_hd_map_data.json"
     with open(json_file, 'w', encoding='utf-8') as f:
         json.dump(raw_data, f, indent=2, ensure_ascii=False)
     
     # 生成并保存解释文件
     explanation = generate_explanation_file(town_name)
-    txt_file = f"hd_map_explanation.txt"
+    txt_file = f"data/map_data/hd_map_explanation.txt"
     with open(txt_file, 'w', encoding='utf-8') as f:
         f.write(explanation)
     

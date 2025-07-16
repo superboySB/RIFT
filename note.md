@@ -29,10 +29,18 @@ unzip -j /workspace/for_RIFT_20250714/Speed-Limits-20250711T161132Z-1-001.zip -d
 ```
 运行验证方式参考`README.md`
 
-## 研究数据对接
+## 复现实验
+### 研究数据对接
 ```sh
-python data/extract_complete_npz_data.py
+python analysis_npz_map_data.py
 ```
+
+### 研究训练过程
+时不时会崩溃
+```sh
+bash scripts/run_multi.sh -t 3 -e pdm_lite.yaml -c rift_pluto.yaml -m train_cbv -r 2 -s 0 -g 0
+```
+
 ## QA
 
 ### 便于递交IT
