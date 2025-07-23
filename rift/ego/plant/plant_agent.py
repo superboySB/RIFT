@@ -126,15 +126,11 @@ class PlanTAgent(DataAgent):
         # needed for traffic_light_hazard
         _ = super()._get_brake(stop_sign_hazard=0, vehicle_hazard=0, walker_hazard=0)
         tick_data = self.tick(input_data)
-        # label_raw contains [vehicle information, route information]
-        # pos from the GT data instead of UnscentedKalmanFilter
         label_raw = super().get_bev_boxes(input_data=input_data, pos=input_data['gps'], viz_route=viz_route)
-        # 新增：保存输入状态
         self.episode_inputs.append({
             'label_raw': label_raw,
             'input_data': dict(input_data),
         })
-        # 新增：保存自车实际位置
         if 'gps' in input_data:
             self.episode_ego_pos.append(tuple(input_data['gps']))
         else:
@@ -142,67 +138,75 @@ class PlanTAgent(DataAgent):
 
         if self.exec_or_inter == 'exec' or self.exec_or_inter is None:
             self.control = self._get_control(label_raw, tick_data)
-        
         inital_frames_delay = 2
         if self.step < inital_frames_delay:
             self.control = carla.VehicleControl(0.0, 0.0, 1.0)
-            
-        # --- 新增：详细打印 ---
-        print(f"[PlanTAgent][Debug] Step {self.step}")
-        print(f"  Control: steer={self.control.steer:.4f}, throttle={self.control.throttle:.4f}, brake={self.control.brake:.4f}")
+
+        # --- 优化主log输出 ---
+        log_str = f"Step: {self.step}\n"
+        # 1. Ego
+        ego = label_raw[0]
+        log_str += f"Ego State: x={ego['position'][0]:.3f}, y={ego['position'][1]:.3f}, yaw={ego['yaw']:.3f}, speed={ego['speed']:.3f}, extent={ego['extent']}, id={ego['id']}\n"
+        # 2. Other vehicles
+        others = [v for v in label_raw[1:] if v['class']=='Car']
+        log_str += f"Other Vehicles ({len(others)}):\n"
+        for v in others:
+            log_str += f"  [id={v['id']}] x={v['position'][0]:.3f}, y={v['position'][1]:.3f}, yaw={v['yaw']:.3f}, speed={v['speed']:.3f}, extent={v['extent']}\n"
+        # 3. Route points
+        routes = [v for v in label_raw if v['class']=='Route']
+        log_str += f"Route Points ({len(routes)}):\n"
+        for v in routes:
+            log_str += f"  [id={v.get('id','?')}] x={v['position'][0]:.3f}, y={v['position'][1]:.3f}, yaw={v['yaw']:.3f}, extent={v['extent']}\n"
+        # 4. PlanT输出waypoints
         if hasattr(self, 'episode_waypoints') and len(self.episode_waypoints) > 0:
             wps = self.episode_waypoints[-1]
-            print(f"  Waypoints (local): {[f'x={wp[0]:.3f}, y={wp[1]:.3f}' for wp in wps]}")
-        if 'speed' in input_data:
-            print(f"  Ego speed: {input_data['speed']:.3f}")
-        if 'gps' in input_data:
-            print(f"  Ego GPS: {input_data['gps']}")
+            log_str += f"Waypoints (future, local frame):\n"
+            for idx, wp in enumerate(wps):
+                log_str += f"  [{idx}]: x={wp[0]:.3f}, y={wp[1]:.3f}\n"
+        # 5. PID控制量
+        log_str += f"Control: steer={self.control.steer:.4f}, throttle={self.control.throttle:.4f}, brake={self.control.brake:.4f}\n"
+        log_str += f"Ego speed: {input_data.get('speed', None):.3f}\n"
+        log_str += f"Ego GPS: {input_data.get('gps', None)}\n"
+        log_str += "-"*40 + "\n"
+        self.ego_log_file.write(log_str)
+        self.ego_log_file.flush()
+        print(f"[PlanTAgent] Step {self.step} 输入状态和控制量已写入log。")
 
-        # --- 新增：每步log写入debug/step_xx.log ---
-        step_log_path = self.debug_dir / f'step_{self.step:04d}.log'
-        with open(step_log_path, 'w') as f:
-            f.write(f"Step: {self.step}\n")
-            if hasattr(self, 'episode_waypoints') and len(self.episode_waypoints) > 0:
-                wps = self.episode_waypoints[-1]
-                f.write(f"Waypoints (local): {[f'x={wp[0]:.3f}, y={wp[1]:.3f}' for wp in wps]}\n")
-            f.write(f"Control: steer={self.control.steer:.4f}, throttle={self.control.throttle:.4f}, brake={self.control.brake:.4f}\n")
-            if 'speed' in input_data:
-                f.write(f"Ego speed: {input_data['speed']:.3f}\n")
-            if 'gps' in input_data:
-                f.write(f"Ego GPS: {input_data['gps']}\n")
-            # 可扩展写入更多信息
-
-        # --- 新增：每隔N步画图 ---
+        # --- 优化可视化 ---
         N = 20
         if self.step % N == 0:
             try:
                 import matplotlib.pyplot as plt
                 import numpy as np
                 fig, ax = plt.subplots(figsize=(8, 8))
-                # 画当前step的waypoints
+                # 画waypoints（局部坐标）
                 if hasattr(self, 'episode_waypoints') and len(self.episode_waypoints) > 0:
                     wps = np.array(self.episode_waypoints[-1])
                     ax.plot(wps[:,0], wps[:,1], 'bo-', label='Pred Waypoints')
-                # 画自车实际位置
-                if hasattr(self, 'episode_ego_pos') and len(self.episode_ego_pos) > 0:
-                    ego_pos = self.episode_ego_pos[-1]
-                    if ego_pos[0] is not None:
-                        ax.plot(ego_pos[0], ego_pos[1], 'ro', label='Ego Pos')
-                # 画速度、角度等信息
-                if 'speed' in input_data:
-                    ax.set_title(f'Step {self.step} | Speed: {input_data["speed"]:.2f} m/s')
-                else:
-                    ax.set_title(f'Step {self.step}')
+                    ax.scatter(wps[:,0], wps[:,1], c='b')
+                # 画ego pos（局部坐标，原点）
+                ax.plot(0, 0, 'ro', label='Ego Pos')
+                # 画其他车辆（局部坐标）
+                for v in others:
+                    ax.plot(v['position'][0], v['position'][1], 'gs', label='Other Car' if v==others[0] else "")
+                # 画route点（局部坐标）
+                for v in routes:
+                    ax.plot(v['position'][0], v['position'][1], 'k*', label='Route Pt' if v==routes[0] else "")
+                # 速度、step等信息
+                ax.set_title(f'Step {self.step} | Speed: {input_data.get('speed', 0):.2f} m/s')
                 ax.set_xlabel('x (local)')
                 ax.set_ylabel('y (local)')
-                ax.legend()
+                handles, labels = ax.get_legend_handles_labels()
+                by_label = dict(zip(labels, handles))
+                ax.legend(by_label.values(), by_label.keys())
+                ax.grid(True)
                 plt.tight_layout()
                 fig.savefig(self.debug_dir / f'step_{self.step:04d}_viz.png')
                 plt.close(fig)
             except Exception as e:
                 print(f"[PlanTAgent] Failed to plot debug figure at step {self.step}: {e}")
 
-        print(f"[PlanTAgent] Step {getattr(self, 'step', 0)} 结束，控制量: steer={self.control.steer:.4f}, throttle={self.control.throttle:.4f}, brake={self.control.brake:.4f}")
+        print(f"[PlanTAgent] Step {self.step} 结束，控制量: steer={self.control.steer:.4f}, throttle={self.control.throttle:.4f}, brake={self.control.brake:.4f}")
         return self.control
 
     def _get_control(self, label_raw, input_data):
