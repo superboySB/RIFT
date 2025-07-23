@@ -11,6 +11,7 @@ import warnings
 from PIL import Image, ImageDraw, ImageOps
 import torch
 import math
+import shutil
 
 from rift.ego.utils.coordinate_utils import inverse_conversion_2d
 from rift.ego.utils.explainability_utils import *
@@ -34,6 +35,15 @@ class PlanTAgent(DataAgent):
         self.exec_or_inter = config['exec_or_inter']
         self.viz_attn_map = config['viz_attn_map']
 
+        # --- 新增：debug文件夹管理 ---
+        from pathlib import Path
+        import os
+        workspace_root = Path(os.environ.get('WORKSPACE_ROOT', '.'))
+        self.debug_dir = workspace_root / 'debug'
+        if self.debug_dir.exists():
+            shutil.rmtree(self.debug_dir)
+        self.debug_dir.mkdir(parents=True, exist_ok=True)
+
         self.save_mask = []
         self.save_topdowns = []
         self.timings_run_step = []
@@ -45,10 +55,7 @@ class PlanTAgent(DataAgent):
         self.control.brake = 1.0
 
         # 新增：初始化专用log文件
-        from pathlib import Path
-        import os
-        workspace_root = Path(os.environ.get('WORKSPACE_ROOT', '.'))
-        self.ego_log_path = workspace_root / 'collect_pid_data.log'
+        self.ego_log_path = self.debug_dir / 'collect_pid_data.log'
         if self.ego_log_path.exists():
             self.ego_log_path.unlink()  # 每次运行前清空
         self.ego_log_file = open(self.ego_log_path, 'a')
@@ -140,6 +147,61 @@ class PlanTAgent(DataAgent):
         if self.step < inital_frames_delay:
             self.control = carla.VehicleControl(0.0, 0.0, 1.0)
             
+        # --- 新增：详细打印 ---
+        print(f"[PlanTAgent][Debug] Step {self.step}")
+        print(f"  Control: steer={self.control.steer:.4f}, throttle={self.control.throttle:.4f}, brake={self.control.brake:.4f}")
+        if hasattr(self, 'episode_waypoints') and len(self.episode_waypoints) > 0:
+            wps = self.episode_waypoints[-1]
+            print(f"  Waypoints (local): {[f'x={wp[0]:.3f}, y={wp[1]:.3f}' for wp in wps]}")
+        if 'speed' in input_data:
+            print(f"  Ego speed: {input_data['speed']:.3f}")
+        if 'gps' in input_data:
+            print(f"  Ego GPS: {input_data['gps']}")
+
+        # --- 新增：每步log写入debug/step_xx.log ---
+        step_log_path = self.debug_dir / f'step_{self.step:04d}.log'
+        with open(step_log_path, 'w') as f:
+            f.write(f"Step: {self.step}\n")
+            if hasattr(self, 'episode_waypoints') and len(self.episode_waypoints) > 0:
+                wps = self.episode_waypoints[-1]
+                f.write(f"Waypoints (local): {[f'x={wp[0]:.3f}, y={wp[1]:.3f}' for wp in wps]}\n")
+            f.write(f"Control: steer={self.control.steer:.4f}, throttle={self.control.throttle:.4f}, brake={self.control.brake:.4f}\n")
+            if 'speed' in input_data:
+                f.write(f"Ego speed: {input_data['speed']:.3f}\n")
+            if 'gps' in input_data:
+                f.write(f"Ego GPS: {input_data['gps']}\n")
+            # 可扩展写入更多信息
+
+        # --- 新增：每隔N步画图 ---
+        N = 20
+        if self.step % N == 0:
+            try:
+                import matplotlib.pyplot as plt
+                import numpy as np
+                fig, ax = plt.subplots(figsize=(8, 8))
+                # 画当前step的waypoints
+                if hasattr(self, 'episode_waypoints') and len(self.episode_waypoints) > 0:
+                    wps = np.array(self.episode_waypoints[-1])
+                    ax.plot(wps[:,0], wps[:,1], 'bo-', label='Pred Waypoints')
+                # 画自车实际位置
+                if hasattr(self, 'episode_ego_pos') and len(self.episode_ego_pos) > 0:
+                    ego_pos = self.episode_ego_pos[-1]
+                    if ego_pos[0] is not None:
+                        ax.plot(ego_pos[0], ego_pos[1], 'ro', label='Ego Pos')
+                # 画速度、角度等信息
+                if 'speed' in input_data:
+                    ax.set_title(f'Step {self.step} | Speed: {input_data["speed"]:.2f} m/s')
+                else:
+                    ax.set_title(f'Step {self.step}')
+                ax.set_xlabel('x (local)')
+                ax.set_ylabel('y (local)')
+                ax.legend()
+                plt.tight_layout()
+                fig.savefig(self.debug_dir / f'step_{self.step:04d}_viz.png')
+                plt.close(fig)
+            except Exception as e:
+                print(f"[PlanTAgent] Failed to plot debug figure at step {self.step}: {e}")
+
         print(f"[PlanTAgent] Step {getattr(self, 'step', 0)} 结束，控制量: steer={self.control.steer:.4f}, throttle={self.control.throttle:.4f}, brake={self.control.brake:.4f}")
         return self.control
 
@@ -323,9 +385,10 @@ class PlanTAgent(DataAgent):
     def destroy(self):
         super().destroy()
         del self.net
-        # 新增：关闭log文件
+        # --- 新增：关闭log文件 ---
         if hasattr(self, 'ego_log_file'):
             self.ego_log_file.close()
+        # 不再在destroy时画大图
         # 新增：绘制PID相关曲线
         try:
             import matplotlib.pyplot as plt
