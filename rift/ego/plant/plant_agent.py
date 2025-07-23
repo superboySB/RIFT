@@ -60,6 +60,11 @@ class PlanTAgent(DataAgent):
             self.ego_log_path.unlink()  # 每次运行前清空
         self.ego_log_file = open(self.ego_log_path, 'a')
 
+        # 新增：初始化PID debug csv文件
+        self.pid_csv_path = self.debug_dir / 'pid_debug.csv'
+        with open(self.pid_csv_path, 'w') as f:
+            f.write('step,wp0_x,wp0_y,wp1_x,wp1_y,ego_speed,steer,throttle,brake\n')
+
         # 新增：用于可视化的PID数据收集
         self.pid_log = {
             'step': [],
@@ -142,6 +147,21 @@ class PlanTAgent(DataAgent):
         if self.step < inital_frames_delay:
             self.control = carla.VehicleControl(0.0, 0.0, 1.0)
 
+        # --- 新增：每步写入PID debug csv ---
+        if hasattr(self, 'episode_waypoints') and len(self.episode_waypoints) > 0:
+            wps = self.episode_waypoints[-1]
+            if wps.shape[0] >= 2:
+                wp0_x, wp0_y = wps[0][0], wps[0][1]
+                wp1_x, wp1_y = wps[1][0], wps[1][1]
+            else:
+                wp0_x = wp0_y = wp1_x = wp1_y = float('nan')
+            ego_speed = input_data.get('speed', float('nan'))
+            steer = self.control.steer
+            throttle = self.control.throttle
+            brake = self.control.brake
+            with open(self.pid_csv_path, 'a') as f:
+                f.write(f"{self.step},{wp0_x:.4f},{wp0_y:.4f},{wp1_x:.4f},{wp1_y:.4f},{ego_speed:.4f},{steer:.4f},{throttle:.4f},{brake:.4f}\n")
+
         # --- 优化主log输出 ---
         log_str = f"Step: {self.step}\n"
         # 1. Ego
@@ -193,7 +213,7 @@ class PlanTAgent(DataAgent):
                 for v in routes:
                     ax.plot(v['position'][0], v['position'][1], 'k*', label='Route Pt' if v==routes[0] else "")
                 # 速度、step等信息
-                ax.set_title(f'Step {self.step} | Speed: {input_data.get('speed', 0):.2f} m/s')
+                ax.set_title(f"Step {self.step} | Speed: {input_data.get('speed', 0):.2f} m/s")
                 ax.set_xlabel('x (local)')
                 ax.set_ylabel('y (local)')
                 handles, labels = ax.get_legend_handles_labels()
