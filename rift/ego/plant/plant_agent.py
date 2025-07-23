@@ -44,6 +44,32 @@ class PlanTAgent(DataAgent):
         self.control.throttle = 0.0
         self.control.brake = 1.0
 
+        # 新增：初始化专用log文件
+        from pathlib import Path
+        import os
+        workspace_root = Path(os.environ.get('WORKSPACE_ROOT', '.'))
+        self.ego_log_path = workspace_root / 'collect_pid_data.log'
+        if self.ego_log_path.exists():
+            self.ego_log_path.unlink()  # 每次运行前清空
+        self.ego_log_file = open(self.ego_log_path, 'a')
+
+        # 新增：用于可视化的PID数据收集
+        self.pid_log = {
+            'step': [],
+            'speed_error': [],
+            'steer_error': [],
+            'throttle': [],
+            'steer': [],
+            'brake': [],
+            'desired_speed': [],
+            'actual_speed': [],
+            'waypoint_error': [],
+        }
+        # 新增：episode级别输入/输出/轨迹收集
+        self.episode_inputs = []  # 每步输入状态（自车、它车、路线）
+        self.episode_waypoints = []  # 每步planT输出的waypoints
+        self.episode_ego_pos = []  # 每步自车实际gps
+
         # exec_or_inter is used for the interpretability metric
         # exec is the model that executes the actions in carla
         # inter is the model that obtains attention scores and a ranking of the vehicles importance
@@ -87,8 +113,7 @@ class PlanTAgent(DataAgent):
 
     @torch.no_grad()
     def run_step(self, input_data, viz_route=None):
-        # The input data contains [speed, imu(yaw angle), gps(x, y location)] sometimes include 'rgb_back', 'sem_back'
-
+        print(f"[PlanTAgent] Step {getattr(self, 'step', 0)} 开始...")
         self.step += 1
 
         # needed for traffic_light_hazard
@@ -97,6 +122,16 @@ class PlanTAgent(DataAgent):
         # label_raw contains [vehicle information, route information]
         # pos from the GT data instead of UnscentedKalmanFilter
         label_raw = super().get_bev_boxes(input_data=input_data, pos=input_data['gps'], viz_route=viz_route)
+        # 新增：保存输入状态
+        self.episode_inputs.append({
+            'label_raw': label_raw,
+            'input_data': dict(input_data),
+        })
+        # 新增：保存自车实际位置
+        if 'gps' in input_data:
+            self.episode_ego_pos.append(tuple(input_data['gps']))
+        else:
+            self.episode_ego_pos.append((None, None))
 
         if self.exec_or_inter == 'exec' or self.exec_or_inter is None:
             self.control = self._get_control(label_raw, tick_data)
@@ -105,6 +140,7 @@ class PlanTAgent(DataAgent):
         if self.step < inital_frames_delay:
             self.control = carla.VehicleControl(0.0, 0.0, 1.0)
             
+        print(f"[PlanTAgent] Step {getattr(self, 'step', 0)} 结束，控制量: steer={self.control.steer:.4f}, throttle={self.control.throttle:.4f}, brake={self.control.brake:.4f}")
         return self.control
 
     def _get_control(self, label_raw, input_data):
@@ -128,6 +164,73 @@ class PlanTAgent(DataAgent):
         control.steer = float(steer)
         control.throttle = float(throttle)
         control.brake = float(brake)
+
+        # 新增：保存waypoints
+        self.episode_waypoints.append(pred_wp[0].cpu().numpy())
+        # 新增：详细输入状态log
+        log_str = f"Step: {getattr(self, 'step', -1)}\n"
+        # 1. Ego
+        ego = label_raw[0]
+        log_str += f"Ego State: x={ego['position'][0]:.3f}, y={ego['position'][1]:.3f}, yaw={ego['yaw']:.3f}, speed={ego['speed']:.3f}, extent={ego['extent']}, id={ego['id']}\n"
+        # 2. Other vehicles
+        others = [v for v in label_raw[1:] if v['class']=='Car']
+        log_str += f"Other Vehicles ({len(others)}):\n"
+        for v in others:
+            log_str += f"  [id={v['id']}] x={v['position'][0]:.3f}, y={v['position'][1]:.3f}, yaw={v['yaw']:.3f}, speed={v['speed']:.3f}, extent={v['extent']}\n"
+        # 3. Route points
+        routes = [v for v in label_raw if v['class']=='Route']
+        log_str += f"Route Points ({len(routes)}):\n"
+        for v in routes:
+            log_str += f"  [id={v.get('id','?')}] x={v['position'][0]:.3f}, y={v['position'][1]:.3f}, yaw={v['yaw']:.3f}, extent={v['extent']}\n"
+        # 4. PlanT输出waypoints
+        log_str += f"Waypoints (future, local frame):\n"
+        for idx, wp in enumerate(pred_wp[0].cpu().numpy()):
+            log_str += f"  [{idx}]: x={wp[0]:.3f}, y={wp[1]:.3f}\n"
+        # 5. PID控制量
+        log_str += f"Control: steer={control.steer:.4f}, throttle={control.throttle:.4f}, brake={control.brake:.4f}\n"
+        log_str += "-"*40 + "\n"
+        self.ego_log_file.write(log_str)
+        self.ego_log_file.flush()
+        print(f"[PlanTAgent] Step {getattr(self, 'step', -1)} 输入状态和控制量已写入log。")
+
+        # 新增：记录waypoints和控制量到log文件
+        log_str = f"Step: {getattr(self, 'step', -1)}\n"
+        log_str += f"Waypoints (future, local frame):\n"
+        for idx, wp in enumerate(pred_wp[0].cpu().numpy()):
+            log_str += f"  [{idx}]: x={wp[0]:.3f}, y={wp[1]:.3f}\n"
+        log_str += f"Control: steer={control.steer:.4f}, throttle={control.throttle:.4f}, brake={control.brake:.4f}\n"
+        log_str += "-"*40 + "\n"
+        self.ego_log_file.write(log_str)
+        self.ego_log_file.flush()
+
+        # 新增：收集PID相关数据用于可视化
+        # 速度误差、目标速度、实际速度
+        speed = float(input_data['speed'])
+        wp_np = pred_wp[0].cpu().numpy()
+        if wp_np.shape[0] > 1:
+            desired_speed = float(np.linalg.norm(wp_np[1] - wp_np[0]))
+        else:
+            desired_speed = 0.0
+        speed_error = desired_speed - speed
+        # 轨迹跟踪误差（自车当前位置到第一个waypoint的距离）
+        if 'gps' in input_data:
+            ego_pos = np.array(input_data['gps'][:2])
+            wp0 = wp_np[0]
+            waypoint_error = float(np.linalg.norm(wp0 - ego_pos))
+        else:
+            waypoint_error = 0.0
+        # 转向误差（用angle近似）
+        aim = (wp_np[1] + wp_np[0]) / 2.0 if wp_np.shape[0] > 1 else wp_np[0]
+        steer_error = float(np.degrees(np.arctan2(aim[1], aim[0])) / 90)
+        self.pid_log['step'].append(getattr(self, 'step', -1))
+        self.pid_log['speed_error'].append(speed_error)
+        self.pid_log['steer_error'].append(steer_error)
+        self.pid_log['throttle'].append(float(throttle))
+        self.pid_log['steer'].append(float(steer))
+        self.pid_log['brake'].append(float(brake))
+        self.pid_log['desired_speed'].append(desired_speed)
+        self.pid_log['actual_speed'].append(speed)
+        self.pid_log['waypoint_error'].append(waypoint_error)
 
         viz_trigger = ((self.step % 20 == 0) and self.cfg['viz'])
         if viz_trigger and self.step > 2:
@@ -220,6 +323,65 @@ class PlanTAgent(DataAgent):
     def destroy(self):
         super().destroy()
         del self.net
+        # 新增：关闭log文件
+        if hasattr(self, 'ego_log_file'):
+            self.ego_log_file.close()
+        # 新增：绘制PID相关曲线
+        try:
+            import matplotlib.pyplot as plt
+            import os
+            from pathlib import Path
+            workspace_root = Path(os.environ.get('WORKSPACE_ROOT', '.'))
+            fig, axs = plt.subplots(4, 1, figsize=(10, 14), sharex=True)
+            axs[0].plot(self.pid_log['step'], self.pid_log['desired_speed'], label='Desired Speed')
+            axs[0].plot(self.pid_log['step'], self.pid_log['actual_speed'], label='Actual Speed')
+            axs[0].set_ylabel('Speed (m/s)')
+            axs[0].set_title('Speed Tracking')
+            axs[0].legend()
+            axs[1].plot(self.pid_log['step'], self.pid_log['speed_error'], label='Speed Error')
+            axs[1].set_ylabel('Speed Error (m/s)')
+            axs[1].set_title('Speed Error')
+            axs[2].plot(self.pid_log['step'], self.pid_log['steer_error'], label='Steer Error (norm)')
+            axs[2].plot(self.pid_log['step'], self.pid_log['steer'], label='Steer Output')
+            axs[2].set_ylabel('Steer')
+            axs[2].set_title('Steer Tracking')
+            axs[2].legend()
+            axs[3].plot(self.pid_log['step'], self.pid_log['waypoint_error'], label='Waypoint Error')
+            axs[3].set_ylabel('Waypoint Error (m)')
+            axs[3].set_xlabel('Step')
+            axs[3].set_title('Waypoint Tracking Error')
+            axs[3].legend()
+            plt.tight_layout()
+            fig.savefig(workspace_root / 'collect_pid_data_plot.png')
+            plt.close(fig)
+            print(f"[PlanTAgent] PID相关曲线已保存到 {workspace_root / 'collect_pid_data_plot.png'}")
+        except Exception as e:
+            print(f"[PlanTAgent] Failed to plot PID curves: {e}")
+        # 新增：episode级别轨迹可视化
+        try:
+            import matplotlib.pyplot as plt
+            import numpy as np
+            from pathlib import Path
+            workspace_root = Path(os.environ.get('WORKSPACE_ROOT', '.') )
+            fig, ax = plt.subplots(figsize=(10, 10))
+            # 画所有step的waypoints轨迹
+            for i, wps in enumerate(self.episode_waypoints):
+                wps = np.array(wps)
+                ax.plot(wps[:,0], wps[:,1], color='blue', alpha=0.2, linewidth=1)
+            # 画自车实际轨迹
+            ego_pos = np.array([p for p in self.episode_ego_pos if p[0] is not None])
+            if len(ego_pos) > 0:
+                ax.plot(ego_pos[:,0], ego_pos[:,1], color='red', marker='o', label='Ego Actual Trajectory')
+            ax.set_title('PlanT Predicted Waypoints (blue, all steps) vs Ego Actual Trajectory (red)')
+            ax.set_xlabel('x (local)')
+            ax.set_ylabel('y (local)')
+            ax.legend()
+            plt.tight_layout()
+            fig.savefig(workspace_root / 'collect_pid_episode_traj.png')
+            plt.close(fig)
+            print(f"[PlanTAgent] Episode轨迹可视化已保存到 {workspace_root / 'collect_pid_episode_traj.png'}")
+        except Exception as e:
+            print(f"[PlanTAgent] Failed to plot episode trajectory: {e}")
 
 
 def create_BEV(labels_org, gt_traffic_light_hazard, target_point, pred_wp, pix_per_m=5):

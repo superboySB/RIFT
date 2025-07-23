@@ -1,18 +1,19 @@
 # 笔记
 ## 配置
 ```sh
-docker build -t dzp_carla:test --network=host --progress=plain .
+docker build -t dzp_carla:0714 --network=host --progress=plain .
 
 xhost +
 
 docker run -itd --privileged --gpus all --net=host \
+  -v /home/matt/projects/RIFT /workspace/RIFT \
   -e DISPLAY=$DISPLAY \
   -e SDL_AUDIODRIVER=dummy \
-  --name dzp-carla-test \
-  dzp_carla:test \
+  --name dzp-carla-0714 \
+  dzp_carla:0714 \
   /bin/bash
 
-docker exec -it dzp-carla-test /bin/bash
+docker exec -it dzp-carla-0714 /bin/bash
 
 cd ~ && bash ./CarlaUE4.sh
 ```
@@ -39,6 +40,11 @@ python analysis_npz_map_data.py
 时不时会崩溃
 ```sh
 bash scripts/run_multi.sh -t 3 -e pdm_lite.yaml -c rift_pluto.yaml -m train_cbv -r 2 -s 0 -g 0
+```
+
+### 研究推理过程
+```sh
+CUDA_VISIBLE_DEVICES=0 python scripts/run.py --ego_cfg plant.yaml --cbv_cfg rift_pluto.yaml --mode eval -rep 1
 ```
 
 ## QA
