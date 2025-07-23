@@ -9,7 +9,7 @@
 *.zip
 *.npy
 *.pkl
-*.csv
+# *.csv
 *.npz
 
 # Byte-compiled / optimized / DLL files
