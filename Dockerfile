@@ -18,7 +18,7 @@ RUN apt-get update && \
     git tmux vim gedit curl sudo && \
     add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update && \
-    apt-get install -y python3.8 python3.8-distutils python3.8-dev unzip
+    apt-get install -y python3.8 python3.8-distutils python3.8-dev unzip sudo python3-tk ffmpeg
 
 # 切换 python3 默认到 python3.8
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1 && \
