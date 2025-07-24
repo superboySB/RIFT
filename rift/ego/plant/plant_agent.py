@@ -226,24 +226,42 @@ class PlanTAgent(DataAgent):
             try:
                 import matplotlib.pyplot as plt
                 import numpy as np
-                fig, ax = plt.subplots(figsize=(8, 8))
-                # 画waypoints（局部坐标）
+                fig, ax = plt.subplots(figsize=(10, 10))
+                # 画ego bbox（红色）
+                ego = label_raw[0]
+                def plot_bbox(ax, x, y, yaw, extent_x, extent_y, color, label=None, alpha=1.0, lw=2, zorder=2):
+                    # extent_x/extent_y为bbox长宽（半长半宽）
+                    from matplotlib.patches import Polygon
+                    c, s = np.cos(yaw), np.sin(yaw)
+                    dx = extent_x
+                    dy = extent_y
+                    corners = np.array([
+                        [dx, dy], [dx, -dy], [-dx, -dy], [-dx, dy]
+                    ])
+                    rot = np.array([[c, -s], [s, c]])
+                    corners = corners @ rot.T + np.array([x, y])
+                    poly = Polygon(corners, closed=True, edgecolor=color, facecolor='none', lw=lw, alpha=alpha, zorder=zorder, label=label)
+                    ax.add_patch(poly)
+                # ego bbox
+                plot_bbox(ax, 0, 0, ego['yaw'], ego['extent'][2]/2, ego['extent'][1]/2, color='r', label='Ego', lw=2, zorder=3)
+                # 画其他车辆bbox（绿色）
+                for idx, v in enumerate(others):
+                    rel_x, rel_y = v['position'][0], v['position'][1]
+                    plot_bbox(ax, rel_x, rel_y, v['yaw'], v['extent'][2]/2, v['extent'][1]/2, color='g', label='Other Car' if idx==0 else None, lw=1.5, zorder=2)
+                # 画route点bbox（蓝色）
+                for idx, v in enumerate(routes):
+                    rel_x, rel_y = v['position'][0], v['position'][1]
+                    plot_bbox(ax, rel_x, rel_y, v['yaw'], v['extent'][2]/2, v['extent'][1]/2, color='b', label='Route Pt' if idx==0 else None, lw=1.5, zorder=1)
+                # 画waypoints（蓝色点连线）
                 if hasattr(self, 'episode_waypoints') and len(self.episode_waypoints) > 0:
                     wps = np.array(self.episode_waypoints[-1])
-                    ax.plot(wps[:,0], wps[:,1], 'bo-', label='Pred Waypoints')
-                    ax.scatter(wps[:,0], wps[:,1], c='b')
-                # 画ego pos（局部坐标，原点）
-                ax.plot(0, 0, 'ro', label='Ego Pos')
-                # 画其他车辆（局部坐标）
-                for v in others:
-                    ax.plot(v['position'][0], v['position'][1], 'gs', label='Other Car' if v==others[0] else "")
-                # 画route点（局部坐标）
-                for v in routes:
-                    ax.plot(v['position'][0], v['position'][1], 'k*', label='Route Pt' if v==routes[0] else "")
+                    ax.plot(wps[:,0], wps[:,1], 'bo-', label='Pred Waypoints', zorder=4)
+                    ax.scatter(wps[:,0], wps[:,1], c='b', zorder=5)
                 # 速度、step等信息
                 ax.set_title(f"Step {self.step} | Speed: {input_data.get('speed', 0):.2f} m/s")
                 ax.set_xlabel('x (local)')
                 ax.set_ylabel('y (local)')
+                ax.axis('equal')
                 handles, labels = ax.get_legend_handles_labels()
                 by_label = dict(zip(labels, handles))
                 ax.legend(by_label.values(), by_label.keys())
