@@ -98,6 +98,20 @@ class PlanTAgent(DataAgent):
             raise Exception(f'Unknown model type: {Path(LOAD_CKPT_PATH).suffix}')
         self.net.eval()
 
+        # 新增：PlanT输入输出csv收集
+        self.io_csv_path = self.debug_dir / 'plant_io_debug.csv'
+        self.max_cars = 20
+        self.max_routes = 3
+        self.num_wps = 4
+        header = ['step',
+                  'ego_x', 'ego_y', 'ego_yaw', 'ego_speed', 'ego_extent_x', 'ego_extent_y', 'ego_extent_z', 'ego_id']
+        header += [f'car{i}_{k}' for i in range(self.max_cars) for k in ['x','y','yaw','speed','extent_x','extent_y','id']]
+        header += [f'route{i}_{k}' for i in range(self.max_routes) for k in ['x','y','yaw','id','extent_x','extent_y']]
+        header += ['target_point_x', 'target_point_y', 'light_hazard']
+        header += [f'wp{i}_x' for i in range(self.num_wps)] + [f'wp{i}_y' for i in range(self.num_wps)]
+        with open(self.io_csv_path, 'w') as f:
+            f.write(','.join(header) + '\n')
+
     def set_planner(self, ego_vehicle, global_plan_gps, global_plan_world_coord):
         super().set_planner(ego_vehicle, global_plan_gps, global_plan_world_coord)
         self._route_planner = RoutePlanner(7.5, 50.0)
@@ -253,26 +267,61 @@ class PlanTAgent(DataAgent):
 
         # 新增：保存waypoints
         self.episode_waypoints.append(pred_wp[0].cpu().numpy())
-        # 新增：详细输入状态log
+
+        # 新增：PlanT输入输出csv收集
+        import math
+        row = [getattr(self, 'step', -1)]
+        # ego
+        ego = label_raw[0]
+        row += [ego['position'][0], ego['position'][1], ego['yaw'], ego['speed'],
+                ego['extent'][0], ego['extent'][1], ego['extent'][2], ego['id']]
+        # cars
+        cars = [v for v in label_raw[1:] if v['class']=='Car']
+        for i in range(self.max_cars):
+            if i < len(cars):
+                v = cars[i]
+                row += [v['position'][0], v['position'][1], v['yaw'], v['speed'],
+                        v['extent'][0], v['extent'][1], v['id']]
+            else:
+                row += [math.nan]*7
+        # routes (route point指的是class为'Route'的元素)
+        routes = [v for v in label_raw if v['class']=='Route']
+        for i in range(self.max_routes):
+            if i < len(routes):
+                v = routes[i]
+                row += [v['position'][0], v['position'][1], v['yaw'], v['id'],
+                        v['extent'][0], v['extent'][1]]
+            else:
+                row += [math.nan]*6
+        # target point
+        row += [input_data['target_point'][0], input_data['target_point'][1]]
+        # light
+        row += [self.traffic_light_hazard]
+        # waypoints
+        wps = pred_wp[0].cpu().numpy()
+        for i in range(self.num_wps):
+            if i < wps.shape[0]:
+                row += [wps[i][0], wps[i][1]]
+            else:
+                row += [math.nan, math.nan]
+        with open(self.io_csv_path, 'a') as f:
+            f.write(','.join(map(str, row)) + '\n')
+
+        # 只保留一次详细log，去掉重复log输出
         log_str = f"Step: {getattr(self, 'step', -1)}\n"
-        # 1. Ego
         ego = label_raw[0]
         log_str += f"Ego State: x={ego['position'][0]:.3f}, y={ego['position'][1]:.3f}, yaw={ego['yaw']:.3f}, speed={ego['speed']:.3f}, extent={ego['extent']}, id={ego['id']}\n"
-        # 2. Other vehicles
         others = [v for v in label_raw[1:] if v['class']=='Car']
         log_str += f"Other Vehicles ({len(others)}):\n"
         for v in others:
             log_str += f"  [id={v['id']}] x={v['position'][0]:.3f}, y={v['position'][1]:.3f}, yaw={v['yaw']:.3f}, speed={v['speed']:.3f}, extent={v['extent']}\n"
-        # 3. Route points
         routes = [v for v in label_raw if v['class']=='Route']
         log_str += f"Route Points ({len(routes)}):\n"
         for v in routes:
             log_str += f"  [id={v.get('id','?')}] x={v['position'][0]:.3f}, y={v['position'][1]:.3f}, yaw={v['yaw']:.3f}, extent={v['extent']}\n"
-        # 4. PlanT输出waypoints
         log_str += f"Waypoints (future, local frame):\n"
         for idx, wp in enumerate(pred_wp[0].cpu().numpy()):
             log_str += f"  [{idx}]: x={wp[0]:.3f}, y={wp[1]:.3f}\n"
-        # 5. PID控制量
         log_str += f"Control: steer={control.steer:.4f}, throttle={control.throttle:.4f}, brake={control.brake:.4f}\n"
         log_str += "-"*40 + "\n"
         self.ego_log_file.write(log_str)
