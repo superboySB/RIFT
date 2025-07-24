@@ -109,6 +109,20 @@ class PlanTAgent(DataAgent):
         header += [f'route{i}_{k}' for i in range(self.max_routes) for k in ['x','y','yaw','id','extent_x','extent_y']]
         header += ['target_point_x', 'target_point_y', 'light_hazard']
         header += [f'wp{i}_x' for i in range(self.num_wps)] + [f'wp{i}_y' for i in range(self.num_wps)]
+        # 新增：相对ego坐标系下的特征列
+        header += [f'car{i}_rel_x' for i in range(self.max_cars)]
+        header += [f'car{i}_rel_y' for i in range(self.max_cars)]
+        header += [f'car{i}_rel_yaw' for i in range(self.max_cars)]
+        header += [f'car{i}_rel_speed' for i in range(self.max_cars)]
+        header += [f'car{i}_rel_extent_x' for i in range(self.max_cars)]
+        header += [f'car{i}_rel_extent_y' for i in range(self.max_cars)]
+        header += [f'car{i}_rel_id' for i in range(self.max_cars)]
+        header += [f'route{i}_rel_x' for i in range(self.max_routes)]
+        header += [f'route{i}_rel_y' for i in range(self.max_routes)]
+        header += [f'route{i}_rel_yaw' for i in range(self.max_routes)]
+        header += [f'route{i}_rel_id' for i in range(self.max_routes)]
+        header += [f'route{i}_rel_extent_x' for i in range(self.max_routes)]
+        header += [f'route{i}_rel_extent_y' for i in range(self.max_routes)]
         with open(self.io_csv_path, 'w') as f:
             f.write(','.join(header) + '\n')
 
@@ -304,6 +318,41 @@ class PlanTAgent(DataAgent):
                 row += [wps[i][0], wps[i][1]]
             else:
                 row += [math.nan, math.nan]
+        # 新增：相对ego坐标系下的特征
+        import numpy as np
+        def global_to_rel(x, y, ego_x, ego_y, ego_yaw):
+            dx = x - ego_x
+            dy = y - ego_y
+            # ego_yaw为弧度
+            rel_x = dx * np.cos(-ego_yaw) - dy * np.sin(-ego_yaw)
+            rel_y = dx * np.sin(-ego_yaw) + dy * np.cos(-ego_yaw)
+            return rel_x, rel_y
+        ego_x, ego_y, ego_yaw = ego['position'][0], ego['position'][1], ego['yaw']
+        # cars
+        for i in range(self.max_cars):
+            if i < len(cars):
+                v = cars[i]
+                rel_x, rel_y = global_to_rel(v['position'][0], v['position'][1], ego_x, ego_y, ego_yaw)
+                rel_yaw = v['yaw'] - ego_yaw
+                rel_speed = v['speed'] # 保持原速，若需相对速度可改
+                rel_extent_x = v['extent'][0]
+                rel_extent_y = v['extent'][1]
+                rel_id = v['id']
+                row += [rel_x, rel_y, rel_yaw, rel_speed, rel_extent_x, rel_extent_y, rel_id]
+            else:
+                row += [math.nan]*7
+        # routes
+        for i in range(self.max_routes):
+            if i < len(routes):
+                v = routes[i]
+                rel_x, rel_y = global_to_rel(v['position'][0], v['position'][1], ego_x, ego_y, ego_yaw)
+                rel_yaw = v['yaw'] - ego_yaw
+                rel_id = v['id']
+                rel_extent_x = v['extent'][0]
+                rel_extent_y = v['extent'][1]
+                row += [rel_x, rel_y, rel_yaw, rel_id, rel_extent_x, rel_extent_y]
+            else:
+                row += [math.nan]*6
         with open(self.io_csv_path, 'a') as f:
             f.write(','.join(map(str, row)) + '\n')
 
