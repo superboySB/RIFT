@@ -261,8 +261,10 @@ class PlanTAgent(DataAgent):
                 # 画waypoints（蓝色点连线）
                 if hasattr(self, 'episode_waypoints') and len(self.episode_waypoints) > 0:
                     wps = np.array(self.episode_waypoints[-1])
-                    ax.plot(wps[:,0], wps[:,1], 'bo-', label='Pred Waypoints', zorder=4)
-                    ax.scatter(wps[:,0], wps[:,1], c='b', zorder=5)
+                    # 交换x, y坐标，使waypoint方向与bbox一致
+                    wps_vis = np.stack([wps[:,1], wps[:,0]], axis=1)
+                    ax.plot(wps_vis[:,0], wps_vis[:,1], 'bo-', label='Pred Waypoints', zorder=4)
+                    ax.scatter(wps_vis[:,0], wps_vis[:,1], c='b', zorder=5)
                 # 速度、step等信息
                 ax.set_title(f"Step {self.step} | Speed: {input_data.get('speed', 0):.2f} m/s")
                 ax.set_xlabel('x (local)')
