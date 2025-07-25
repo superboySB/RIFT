@@ -13,7 +13,7 @@ from typing import List
 import joblib
 import numpy as np
 
-from rift.gym_carla.visualization.video_render import VideoRender
+# from rift.gym_carla.visualization.video_render import VideoRender
 from rift.scenario.tools.route_scenario_configuration import RouteScenarioConfiguration
 
 
@@ -141,4 +141,5 @@ class Logger:
             file.writelines(f"episode: {route.index}, route_data_id: {route.data_id}, town: {route.town}, rep_index: {route.repetition_index}, episode_reward: {round(episode_reward, 2)}\n" for route in routes)
     
     def init_video_render(self, env_params):
-        self.video_render = VideoRender(self.output_dir, env_params, logger=self)
+        # self.video_render = VideoRender(self.output_dir, env_params, logger=self)
+        pass
