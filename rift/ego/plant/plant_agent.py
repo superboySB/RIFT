@@ -226,10 +226,10 @@ class PlanTAgent(DataAgent):
             try:
                 import matplotlib.pyplot as plt
                 import numpy as np
-                from matplotlib.patches import Polygon, FancyArrow
+                from matplotlib.patches import Polygon
                 fig, ax = plt.subplots(figsize=(10, 10))
-                # 新bbox绘制函数：以中心为基准，length=extent[2]，width=extent[1]，不除以2
-                def plot_bbox(ax, x, y, yaw, length, width, color, label=None, alpha=1.0, lw=2, zorder=2, arrow=True):
+                # Waymax风格bbox绘制函数：width=extent[1]（前后/短边/车头），length=extent[2]（左右/长边）
+                def plot_bbox(ax, x, y, yaw, width, length, color, label=None, alpha=1.0, lw=2, zorder=2, arrow=True):
                     c, s = np.cos(yaw), np.sin(yaw)
                     # 四个角，顺时针
                     corners = np.array([
@@ -242,23 +242,22 @@ class PlanTAgent(DataAgent):
                     corners = corners @ rot.T + np.array([x, y])
                     poly = Polygon(corners, closed=True, edgecolor=color, facecolor='none', lw=lw, alpha=alpha, zorder=zorder, label=label)
                     ax.add_patch(poly)
-                    # 画前进方向箭头
+                    # 画前进方向箭头（短边正方向，y轴正方向）
                     if arrow:
-                        # 箭头起点为中心，终点为前方length/2
-                        arr_len = length * 0.4
-                        arr_x = x + arr_len * c
-                        arr_y = y + arr_len * s
-                        ax.arrow(x, y, arr_x-x, arr_y-y, head_width=width*0.15, head_length=length*0.15, fc=color, ec=color, lw=lw, zorder=zorder+1, alpha=alpha)
+                        arr_len = width * 0.4
+                        arr_x = x + arr_len * s  # yaw=0时朝y正方向
+                        arr_y = y + arr_len * c
+                        ax.arrow(x, y, arr_x-x, arr_y-y, head_width=length*0.15, head_length=width*0.15, fc=color, ec=color, lw=lw, zorder=zorder+1, alpha=alpha)
                 # ego bbox
-                plot_bbox(ax, 0, 0, ego['yaw'], ego['extent'][2], ego['extent'][1], color='r', label='Ego', lw=2, zorder=3)
+                plot_bbox(ax, 0, 0, ego['yaw'], ego['extent'][1], ego['extent'][2], color='r', label='Ego', lw=2, zorder=3)
                 # 画其他车辆bbox（绿色）
                 for idx, v in enumerate(others):
                     rel_x, rel_y = v['position'][0], v['position'][1]
-                    plot_bbox(ax, rel_x, rel_y, v['yaw'], v['extent'][2], v['extent'][1], color='g', label='Other Car' if idx==0 else None, lw=1.5, zorder=2)
+                    plot_bbox(ax, rel_x, rel_y, v['yaw'], v['extent'][1], v['extent'][2], color='g', label='Other Car' if idx==0 else None, lw=1.5, zorder=2)
                 # 画route点bbox（蓝色）
                 for idx, v in enumerate(routes):
                     rel_x, rel_y = v['position'][0], v['position'][1]
-                    plot_bbox(ax, rel_x, rel_y, v['yaw'], v['extent'][2], v['extent'][1], color='b', label='Route Pt' if idx==0 else None, lw=1.5, zorder=1)
+                    plot_bbox(ax, rel_x, rel_y, v['yaw'], v['extent'][1], v['extent'][2], color='b', label='Route Pt' if idx==0 else None, lw=1.5, zorder=1)
                 # 画waypoints（蓝色点连线）
                 if hasattr(self, 'episode_waypoints') and len(self.episode_waypoints) > 0:
                     wps = np.array(self.episode_waypoints[-1])
