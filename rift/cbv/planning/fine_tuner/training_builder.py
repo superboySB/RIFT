@@ -15,13 +15,7 @@ from lightning.pytorch.callbacks import (
 )
 from lightning.pytorch.loggers.wandb import WandbLogger
 
-from rift.cbv.planning.fine_tuner.rlft.grpo_pluto.grpo_datamodule import GRPODataModule
-from rift.cbv.planning.fine_tuner.rlft.ppo_pluto.ppo_datamodule import PPODataModule
-from rift.cbv.planning.fine_tuner.rlft.reinforce_pluto.reinforce_datamodule import ReinforceDataModule
 from rift.cbv.planning.fine_tuner.rlft.rift_pluto.rift_datamodule import RIFTDataModule
-from rift.cbv.planning.fine_tuner.sft.rs_pluto.rs_datamodule import RewardShapingDataModule
-from rift.cbv.planning.fine_tuner.sft.rtr_pluto.rtr_datamodule import RTRDataModule
-from rift.cbv.planning.fine_tuner.sft.sft_datamodule import SFTDataModule
 from rift.gym_carla.buffer.cbv_rollout_buffer import CBVRolloutBuffer
 from nuplan_plugin.modeling.torch_module_wrapper import TorchModuleWrapper
 

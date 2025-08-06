@@ -37,6 +37,10 @@ python analysis_npz_map_data.py
 ```
 
 ### 研究训练过程
+单机
+```sh
+CUDA_VISIBLE_DEVICES=0 python scripts/run.py --ego_cfg pdm_lite.yaml --cbv_cfg rift_pluto.yaml --mode train_cbv -rep 1
+```
 时不时会崩溃
 ```sh
 bash scripts/run_multi.sh -t 3 -e pdm_lite.yaml -c rift_pluto.yaml -m train_cbv -r 2 -s 0 -g 0
