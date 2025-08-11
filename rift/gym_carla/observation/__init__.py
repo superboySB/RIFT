@@ -16,11 +16,5 @@ OBSERVATION_LIST = {
     'cbv_normal_obs': CBVNormalObservation,
     'cbv_pluto_obs': CBVPlutoObservation,
     'ego_pluto_obs': EgoPlutoObservation,
-    'cbv_sft_pluto_obs': CBVSFTPlutoObservation,
-    'cbv_rtr_pluto_obs': CBVRTRPlutoObservation,
-    'cbv_rs_pluto_obs': CBVRSPlutoObservation,
-    'cbv_reinforce_pluto_obs': CBVReinforcePlutoObservation,
-    'cbv_ppo_pluto_obs': CBVPPOPlutoObservation,
-    'cbv_grpo_pluto_obs': CBVGRPOPlutoObservation,
     'cbv_rift_pluto_obs': CBVRIFTPlutoObservation,
 }

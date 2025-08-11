@@ -47,19 +47,7 @@ def build_lightning_datamodule(
     """
     DataModule_cfg = cfg.datamodule
 
-    if DataModule_cfg.type == 'sft':
-        data_module = SFTDataModule(DataModule_cfg, buffer)
-    elif DataModule_cfg.type == 'sft-rtr':
-        data_module = RTRDataModule(DataModule_cfg, buffer)
-    elif DataModule_cfg.type == 'sft-rs':
-        data_module = RewardShapingDataModule(DataModule_cfg, buffer)
-    elif DataModule_cfg.type == 'rlft-ppo':
-        data_module = PPODataModule(DataModule_cfg, buffer)
-    elif DataModule_cfg.type == 'rlft-reinforce':
-        data_module = ReinforceDataModule(DataModule_cfg, buffer)
-    elif DataModule_cfg.type == 'rlft-grpo':
-        data_module = GRPODataModule(DataModule_cfg, buffer)
-    elif DataModule_cfg.type == 'rlft-rift':
+    if DataModule_cfg.type == 'rlft-rift':
         data_module = RIFTDataModule(DataModule_cfg, buffer)
     else:
         raise ValueError(f"DataModule type {DataModule_cfg.type} not supported.")
